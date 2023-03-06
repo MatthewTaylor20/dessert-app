@@ -19,6 +19,9 @@
 		955C264529B6A1AD0059DDEE /* DessertsShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C264429B6A1AD0059DDEE /* DessertsShowViewController.swift */; };
 		955C264829B6A3990059DDEE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C264629B6A3990059DDEE /* TableViewCell.swift */; };
 		955C264929B6A3990059DDEE /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955C264729B6A3990059DDEE /* TableViewCell.xib */; };
+		955C264B29B6A74E0059DDEE /* DessertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C264A29B6A74E0059DDEE /* DessertManager.swift */; };
+		955C264E29B6A7690059DDEE /* DessertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C264D29B6A7690059DDEE /* DessertData.swift */; };
+		955C265029B6A7750059DDEE /* DessertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C264F29B6A7750059DDEE /* DessertModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		955C264429B6A1AD0059DDEE /* DessertsShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsShowViewController.swift; sourceTree = "<group>"; };
 		955C264629B6A3990059DDEE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		955C264729B6A3990059DDEE /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		955C264A29B6A74E0059DDEE /* DessertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertManager.swift; sourceTree = "<group>"; };
+		955C264D29B6A7690059DDEE /* DessertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertData.swift; sourceTree = "<group>"; };
+		955C264F29B6A7750059DDEE /* DessertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 			children = (
 				955C261029B6A0620059DDEE /* AppDelegate.swift */,
 				955C261229B6A0620059DDEE /* SceneDelegate.swift */,
+				955C264C29B6A7560059DDEE /* Models */,
 				955C264329B6A11E0059DDEE /* Views */,
 				955C264229B6A1140059DDEE /* Controllers */,
 				955C261929B6A0630059DDEE /* Assets.xcassets */,
@@ -150,6 +157,16 @@
 				955C264729B6A3990059DDEE /* TableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		955C264C29B6A7560059DDEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				955C264A29B6A74E0059DDEE /* DessertManager.swift */,
+				955C264D29B6A7690059DDEE /* DessertData.swift */,
+				955C264F29B6A7750059DDEE /* DessertModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,10 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955C265029B6A7750059DDEE /* DessertModel.swift in Sources */,
 				955C264829B6A3990059DDEE /* TableViewCell.swift in Sources */,
 				955C264529B6A1AD0059DDEE /* DessertsShowViewController.swift in Sources */,
+				955C264B29B6A74E0059DDEE /* DessertManager.swift in Sources */,
 				955C264129B6A1090059DDEE /* DessertsIndexTableViewController.swift in Sources */,
 				955C261129B6A0620059DDEE /* AppDelegate.swift in Sources */,
+				955C264E29B6A7690059DDEE /* DessertData.swift in Sources */,
 				955C261329B6A0620059DDEE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

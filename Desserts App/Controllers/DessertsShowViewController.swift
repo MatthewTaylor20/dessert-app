@@ -8,10 +8,10 @@
 import UIKit
 
 class DessertsShowViewController: UIViewController {
-
+    var dessertID: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(dessertID)
         // Do any additional setup after loading the view.
     }
     

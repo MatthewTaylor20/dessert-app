@@ -15,14 +15,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xo-6n-30H">
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljY-uW-zSk">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6i-tY-Dzg">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="3gA-H2-2t2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIm-9R-e9P" userLabel="Title">
+                                                <rect key="frame" x="8" y="208" width="377" height="46.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="38"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" ambiguous="YES" text=" " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2O-ck-daB" userLabel="Ingredients">
+                                                <rect key="frame" x="8" y="262.66666666666674" width="377" height="26.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" ambiguous="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7P-2h-JPl" userLabel="Description">
+                                                <rect key="frame" x="8" y="297" width="377" height="26.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Y7P-2h-JPl" firstAttribute="top" secondItem="p2O-ck-daB" secondAttribute="bottom" constant="8" id="4Vm-sQ-7sA"/>
+                                            <constraint firstItem="p2O-ck-daB" firstAttribute="top" secondItem="xIm-9R-e9P" secondAttribute="bottom" constant="8" id="Co8-Hf-L2i"/>
+                                            <constraint firstItem="xIm-9R-e9P" firstAttribute="top" secondItem="U6i-tY-Dzg" secondAttribute="bottom" constant="8" id="Dh2-Xr-8Q3"/>
+                                            <constraint firstAttribute="trailing" secondItem="U6i-tY-Dzg" secondAttribute="trailing" id="KZ8-FF-R3W"/>
+                                            <constraint firstItem="p2O-ck-daB" firstAttribute="leading" secondItem="ljY-uW-zSk" secondAttribute="leading" constant="8" id="PNz-en-pTl"/>
+                                            <constraint firstItem="U6i-tY-Dzg" firstAttribute="leading" secondItem="ljY-uW-zSk" secondAttribute="leading" id="T2o-8H-EbL"/>
+                                            <constraint firstItem="U6i-tY-Dzg" firstAttribute="top" secondItem="ljY-uW-zSk" secondAttribute="top" id="UoQ-K3-0ef"/>
+                                            <constraint firstAttribute="trailing" secondItem="xIm-9R-e9P" secondAttribute="trailing" constant="8" id="eG6-de-mcu"/>
+                                            <constraint firstAttribute="trailing" secondItem="p2O-ck-daB" secondAttribute="trailing" constant="8" id="erX-7P-Wy8"/>
+                                            <constraint firstItem="xIm-9R-e9P" firstAttribute="leading" secondItem="ljY-uW-zSk" secondAttribute="leading" constant="8" id="iga-IB-hzj"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y7P-2h-JPl" secondAttribute="trailing" constant="8" id="jdL-YH-oLF"/>
+                                            <constraint firstAttribute="height" priority="500" constant="500" id="kFS-1i-m8b"/>
+                                            <constraint firstAttribute="bottom" secondItem="Y7P-2h-JPl" secondAttribute="bottom" id="wtO-p2-KV4"/>
+                                            <constraint firstItem="Y7P-2h-JPl" firstAttribute="leading" secondItem="ljY-uW-zSk" secondAttribute="leading" constant="8" id="zS4-BE-Kxg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ljY-uW-zSk" firstAttribute="top" secondItem="4Xo-6n-30H" secondAttribute="top" id="1SB-bi-dZf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ljY-uW-zSk" secondAttribute="bottom" id="92C-cZ-tXV"/>
+                                    <constraint firstItem="ljY-uW-zSk" firstAttribute="leading" secondItem="4Xo-6n-30H" secondAttribute="leading" id="ZXK-R5-rJ2"/>
+                                    <constraint firstAttribute="trailing" secondItem="ljY-uW-zSk" secondAttribute="trailing" id="uwS-K2-OAq"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ljY-uW-zSk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="7Rm-Z1-Ues"/>
+                            <constraint firstItem="4Xo-6n-30H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wqg-5K-OLP"/>
+                            <constraint firstItem="4Xo-6n-30H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iVR-DR-Fkg"/>
+                            <constraint firstItem="4Xo-6n-30H" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sHV-1c-xcc"/>
+                            <constraint firstAttribute="bottom" secondItem="4Xo-6n-30H" secondAttribute="bottom" id="wP0-k3-YMv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bgu-KU-ox1"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Y7P-2h-JPl" id="hEO-GL-Pij"/>
+                        <outlet property="ingredientsLabel" destination="p2O-ck-daB" id="bWC-YX-1FB"/>
+                        <outlet property="recipeImageView" destination="U6i-tY-Dzg" id="qKn-Dh-jkA"/>
+                        <outlet property="recipeTitleLabel" destination="xIm-9R-e9P" id="P8K-5F-cOa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="-673"/>
+            <point key="canvasLocation" x="1814.5038167938931" y="-673.23943661971839"/>
         </scene>
         <!--Desserts-->
         <scene sceneID="RHv-Pj-OEp">
@@ -65,7 +137,6 @@
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="labelColor"/>
-                        <color key="barTintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

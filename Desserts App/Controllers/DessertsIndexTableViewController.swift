@@ -7,28 +7,37 @@
 
 import UIKit
 
-class DessertsIndexTableViewController: UITableViewController {
-    var desserts: [DessertModel] = [
-        DessertModel(dessertName: "Apam balik", dessertImageURL: URL(string: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")!, dessertID: "53049"),
-        DessertModel(dessertName: "Apple & Blackberry Crumble", dessertImageURL: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!, dessertID: "52893"),
-        DessertModel(dessertName: "Apple Frangipan Tart", dessertImageURL: URL(string: "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg")!, dessertID: "52768")
-    ]
+class DessertsIndexTableViewController: UITableViewController{
+    var desserts: [DessertModel] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.spinner.stopAnimating()
+            }
+            print("tableViewGroups")
+        }
+    }
     var selectedDessert: String?
+    var dessertManager = DessertManager()
+    let spinner = UIActivityIndicatorView(style: .medium)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.startAnimating()
+        tableView.backgroundView = spinner
+        spinner.hidesWhenStopped = true
+        
+        
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.separatorStyle = .none
 
         self.tableView.rowHeight = 180.0
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "recipieCell")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        dessertManager.delegate = self
+        dessertManager.fetchDessertData()
     }
 
     // MARK: - Table view data source
@@ -41,26 +50,41 @@ class DessertsIndexTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dessert = desserts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipieCell", for: indexPath) as! TableViewCell
-        cell.dessertLabel.text = dessert.dessertName
-        cell.dessertImageView.load(url: dessert.dessertImageURL)
+        cell.dessertLabel.text = dessert.name
+        cell.dessertImageView.load(url: dessert.imageURL)
         return cell
     }
+    
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        selectedDessert = desserts[indexPath.row].dessertID
+        selectedDessert = desserts[indexPath.row].iD
         performSegue(withIdentifier: "showDessert", sender: cell)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDessert" {
             let receiverVC = segue.destination as! DessertsShowViewController
-            receiverVC.dessertID = selectedDessert
+            receiverVC.recipeID = selectedDessert
         }
     }
 
 
 }
+
+//MARK: - DessertManagerDelegate
+extension DessertsIndexTableViewController: DessertManagerDelegate {
+    func didUpdateDesserts(_ dessertManager: DessertManager, desserts: [DessertModel]) {
+        self.desserts = desserts
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
+    
+}
+
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
@@ -74,3 +98,5 @@ extension UIImageView {
         }
     }
 }
+
+

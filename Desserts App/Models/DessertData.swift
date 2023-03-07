@@ -16,3 +16,4 @@ struct Meal: Decodable {
     let strMealThumb: String
     let idMeal: String
 }
+

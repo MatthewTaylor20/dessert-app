@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct DessertModel {
+struct DessertModel: Equatable {
     let name: String
     let imageURL: URL
     let iD: String

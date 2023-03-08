@@ -8,7 +8,7 @@
 import UIKit
 
 class DessertsShowViewController: UIViewController{
-    
+    //outlets for view controller elements
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
@@ -27,28 +27,20 @@ class DessertsShowViewController: UIViewController{
         recipeImageView.layer.cornerRadius = recipeImageView.frame.size.height/10
 
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        //returns the navigation bar title setting to prefersLargeTitles
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 //MARK: - DessertsShowViewController
 extension DessertsShowViewController: RecipeManagerDelegate{
     func didUpdateRecipe(_ dessertManager: RecipeManager, recipe: RecipeModel) {
+        //updates the view components with relevent data returned from network request made in viewDidLoad
         print(recipe)
         recipeImageView.load(url: recipe.imageURL)
         DispatchQueue.main.async {

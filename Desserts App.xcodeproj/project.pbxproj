@@ -25,6 +25,10 @@
 		955C265229B6DD1F0059DDEE /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C265129B6DD1F0059DDEE /* RecipeManager.swift */; };
 		955C265429B6DD2D0059DDEE /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C265329B6DD2D0059DDEE /* RecipeData.swift */; };
 		955C265629B6DD3A0059DDEE /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C265529B6DD3A0059DDEE /* RecipeModel.swift */; };
+		955C26EB29B817080059DDEE /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = 955C26EA29B817080059DDEE /* OHHTTPStubs */; };
+		955C26ED29B817080059DDEE /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 955C26EC29B817080059DDEE /* OHHTTPStubsSwift */; };
+		955C26EF29B81B280059DDEE /* StubbedDessert.json in Resources */ = {isa = PBXBuildFile; fileRef = 955C26EE29B81B280059DDEE /* StubbedDessert.json */; };
+		955C26F129B83AD20059DDEE /* StubbedRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 955C26F029B83AD20059DDEE /* StubbedRecipe.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,8 @@
 		955C265129B6DD1F0059DDEE /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		955C265329B6DD2D0059DDEE /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		955C265529B6DD3A0059DDEE /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		955C26EE29B81B280059DDEE /* StubbedDessert.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StubbedDessert.json; sourceTree = "<group>"; };
+		955C26F029B83AD20059DDEE /* StubbedRecipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StubbedRecipe.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955C26EB29B817080059DDEE /* OHHTTPStubs in Frameworks */,
+				955C26ED29B817080059DDEE /* OHHTTPStubsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				955C262729B6A0630059DDEE /* Desserts_AppTests.swift */,
+				955C26F029B83AD20059DDEE /* StubbedRecipe.json */,
+				955C26EE29B81B280059DDEE /* StubbedDessert.json */,
 			);
 			path = "Desserts AppTests";
 			sourceTree = "<group>";
@@ -212,6 +222,10 @@
 				955C262529B6A0630059DDEE /* PBXTargetDependency */,
 			);
 			name = "Desserts AppTests";
+			packageProductDependencies = (
+				955C26EA29B817080059DDEE /* OHHTTPStubs */,
+				955C26EC29B817080059DDEE /* OHHTTPStubsSwift */,
+			);
 			productName = "Desserts AppTests";
 			productReference = 955C262329B6A0630059DDEE /* Desserts AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -266,6 +280,9 @@
 				Base,
 			);
 			mainGroup = 955C260429B6A0620059DDEE;
+			packageReferences = (
+				955C26E929B817080059DDEE /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+			);
 			productRefGroup = 955C260E29B6A0620059DDEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,6 +310,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955C26F129B83AD20059DDEE /* StubbedRecipe.json in Resources */,
+				955C26EF29B81B280059DDEE /* StubbedDessert.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +681,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		955C26E929B817080059DDEE /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		955C26EA29B817080059DDEE /* OHHTTPStubs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 955C26E929B817080059DDEE /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubs;
+		};
+		955C26EC29B817080059DDEE /* OHHTTPStubsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 955C26E929B817080059DDEE /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 955C260529B6A0620059DDEE /* Project object */;
 }

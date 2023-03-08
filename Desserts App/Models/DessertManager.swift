@@ -30,6 +30,7 @@ struct DessertManager {
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
+                //if the request does not throw an error we move on to parsing the JSON and then updating the desserts array for the TableView
                 if let safeData = data {
                     if let desserts = parseDessertJSON(safeData){
                         self.delegate?.didUpdateDesserts(self, desserts: desserts)

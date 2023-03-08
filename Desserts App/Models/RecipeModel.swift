@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct RecipeModel {
+struct RecipeModel: Equatable{
     let name: String
     let imageURL: URL
     let iD: String

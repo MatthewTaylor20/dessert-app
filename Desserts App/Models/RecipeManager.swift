@@ -30,6 +30,8 @@ struct RecipeManager {
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
+                //if the request does not throw an error we move on to parsing the JSON and then updating the recipe for the view
+
                 if let safeData = data {
                     if let recipe = parseRecipeJSON(safeData){
                         self.delegate?.didUpdateRecipe(self, recipe: recipe)
@@ -92,6 +94,7 @@ struct RecipeManager {
                                       recipeData.meals[0].strMeasure20,
                ]
             var ingredients: String = ""
+            //filters out any empty string responses and any null responses and then forms a bulleted ingredients list so it can be assigned to be label text in the view
             for i in 1...20 {
                 if ingredientNames[i-1] != "" && ingredientMeasures[i-1] != "" && ingredientNames[i-1] != nil && ingredientMeasures[i-1] != nil{
                     ingredients = ingredients + "\u{2022} \(ingredientNames[i-1]!): \(ingredientMeasures[i-1]!)\n"
